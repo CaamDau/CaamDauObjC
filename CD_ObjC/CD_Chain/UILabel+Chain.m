@@ -3,45 +3,45 @@
 #import "UILabel+Chain.h"
 
 @implementation UILabel (Chain)
-- (UILabel * (^)(NSString *))b_text{
+- (UILabel * (^)(NSString *))cd_text{
     return ^(NSString * a){
         self.text = a;
         return self;
     };
 }
 
-- (UILabel * (^)(UIColor *))b_textColor{
+- (UILabel * (^)(UIColor *))cd_textColor{
     return ^(UIColor * a){
         self.textColor = a;
         return self;
     };
 }
-- (UILabel * (^)(UIFont *))b_font{
+- (UILabel * (^)(UIFont *))cd_font{
     return ^(UIFont * a){
         self.font = a;
         return self;
     };
 }
-- (UILabel * (^)(NSTextAlignment))b_alignment{
+- (UILabel * (^)(NSTextAlignment))cd_alignment{
     return ^(NSTextAlignment a){
         self.textAlignment = a;
         return self;
     };
 }
-- (UILabel * (^)(NSInteger))b_numberOfLines{
+- (UILabel * (^)(NSInteger))cd_numberOfLines{
     return ^(NSInteger a){
         self.numberOfLines = a;
         return self;
     };
 }
 
-- (UILabel * (^)(NSAttributedString *))b_attributedText{
+- (UILabel * (^)(NSAttributedString *))cd_attributedText{
     return ^(NSAttributedString * a){
         self.attributedText = a;
         return self;
     };
 }
-- (UILabel * (^)(CGFloat))b_lineSpacing{
+- (UILabel * (^)(CGFloat))cd_lineSpacing{
     return ^(CGFloat a){
         //富文本属性
         NSMutableDictionary *textDict = [NSMutableDictionary dictionary];
@@ -67,49 +67,49 @@
     };
 }
 
-- (UILabel * (^)(NSLineBreakMode))b_lineBreakMode{
+- (UILabel * (^)(NSLineBreakMode))cd_lineBreakMode{
     return ^(NSLineBreakMode a){
         self.lineBreakMode = a;
         return self;
     };
 }
 
-- (UILabel * (^)(UIBaselineAdjustment))b_baselineAdjustment{
+- (UILabel * (^)(UIBaselineAdjustment))cd_baselineAdjustment{
     return ^(UIBaselineAdjustment a){
         self.baselineAdjustment = a;
         return self;
     };
 }
 
-- (UILabel * (^)(BOOL))b_allowsDefaultTighteningForTruncation{
+- (UILabel * (^)(BOOL))cd_allowsDefaultTighteningForTruncation{
     return ^(BOOL a){
         self.allowsDefaultTighteningForTruncation = a;
         return self;
     };
 }
 
-- (UILabel * (^)(CGFloat))b_preferredMaxLayoutWidth{
+- (UILabel * (^)(CGFloat))cd_preferredMaxLayoutWidth{
     return ^(CGFloat a){
         self.preferredMaxLayoutWidth = a;
         return self;
     };
 }
 
-- (UILabel * (^)(BOOL))b_adjustsFontSizeToFitWidth{
+- (UILabel * (^)(BOOL))cd_adjustsFontSizeToFitWidth{
     return ^(BOOL a){
         self.adjustsFontSizeToFitWidth = a;
         return self;
     };
 }
 
-- (UILabel * (^)(UIColor *))b_highlightedTextColor{
+- (UILabel * (^)(UIColor *))cd_highlightedTextColor{
     return ^(UIColor *a){
         self.highlightedTextColor = a;
         return self;
     };
 }
 
-- (UILabel * (^)(CGFloat))b_minimumScaleFactor{
+- (UILabel * (^)(CGFloat))cd_minimumScaleFactor{
     return ^(CGFloat a){
         self.minimumScaleFactor = a;
         return self;

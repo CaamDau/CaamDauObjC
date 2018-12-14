@@ -4,23 +4,23 @@
 @implementation UIAlertController (Chain)
 
 #pragma mark ----- 初始化
-+ (UIAlertController*)b_alert{
-    return [UIAlertController b_alert:UIAlertControllerStyleAlert];
++ (UIAlertController*)cd_alert{
+    return [UIAlertController cd_alert:UIAlertControllerStyleAlert];
 }
-+ (UIAlertController*)b_sheet{
-    return [UIAlertController b_alert:UIAlertControllerStyleActionSheet];
++ (UIAlertController*)cd_sheet{
+    return [UIAlertController cd_alert:UIAlertControllerStyleActionSheet];
 }
-+ (UIAlertController*)b_alert:(UIAlertControllerStyle)style{
++ (UIAlertController*)cd_alert:(UIAlertControllerStyle)style{
     return [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:style];
 }
 #pragma mark ----- 显示
-- (UIAlertController *(^)(UIViewController* ))b_show{
+- (UIAlertController *(^)(UIViewController* ))cd_show{
     return ^(UIViewController* vc){
-        self.b_showBlock(vc,nil);
+        self.cd_showBlock(vc,nil);
         return self;
     };
 }
-- (UIAlertController *(^)(UIViewController* vc, void (^block)(void)))b_showBlock{
+- (UIAlertController *(^)(UIViewController* vc, void (^block)(void)))cd_showBlock{
     return ^id(UIViewController* vc, void (^block)(void)){
         if (!self.title && !self.message && self.actions.count==0) {
             NSLog(@"💀💀大哥！你别这样，什么东西都不放，俺会崩溃的💀💀");
@@ -35,17 +35,17 @@
 }
 
 #pragma mark ----- 消失
-- (void (^)(void))b_hidden{
+- (void (^)(void))cd_hidden{
     return ^(void){
-        self.b_hiddenBlock(nil);
+        self.cd_hiddenBlock(nil);
     };
 }
-- (void(^)(void (^)(void)))b_hiddenBlock{
+- (void(^)(void (^)(void)))cd_hiddenBlock{
     return ^(void (^block)(void)){
-        self.b_hiddenTimeBlock(1.0,block);
+        self.cd_hiddenTimeBlock(1.0,block);
     };
 }
-- (void(^)(NSTimeInterval time, void (^block)(void)))b_hiddenTimeBlock{
+- (void(^)(NSTimeInterval time, void (^block)(void)))cd_hiddenTimeBlock{
     return ^(NSTimeInterval time,void (^block)(void)){
         __weak typeof(self) weakSelf = self;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(time * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -56,13 +56,13 @@
     
 }
 #pragma mark ----- Title 样式
-- (UIAlertController *(^)(NSString*))b_title{
+- (UIAlertController *(^)(NSString*))cd_title{
     return ^(NSString* title){
         self.title = title;
         return self;
     };
 }
-- (UIAlertController *(^)(UIFont*))b_titleFont{
+- (UIAlertController *(^)(UIFont*))cd_titleFont{
     return ^(UIFont* font){
         if (self.title.length>0) {
             NSAttributedString * attributedMessage = [self valueForKey:@"attributedTitle"];
@@ -78,7 +78,7 @@
         return self;
     };
 }
-- (UIAlertController *(^)(UIColor*))b_titleColor{
+- (UIAlertController *(^)(UIColor*))cd_titleColor{
     return ^(UIColor* color){
         if (self.title.length>0) {
             NSAttributedString * attributedMessage = [self valueForKey:@"attributedTitle"];
@@ -94,20 +94,20 @@
         return self;
     };
 }
-- (UIAlertController *(^)(NSAttributedString*))b_titleAttributed{
+- (UIAlertController *(^)(NSAttributedString*))cd_titleAttributed{
     return ^(NSAttributedString* string){
         [self setValue:string forKey:@"attributedTitle"];
         return self;
     };
 }
 #pragma mark ----- Msg 样式
-- (UIAlertController *(^)(NSString*))b_message{
+- (UIAlertController *(^)(NSString*))cd_message{
     return ^(NSString* message){
         self.message = message;
         return self;
     };
 }
-- (UIAlertController *(^)(UIFont*))b_messageFont{
+- (UIAlertController *(^)(UIFont*))cd_messageFont{
     return ^(UIFont* font){
         if (self.message.length>0) {
             NSAttributedString * attributedMessage = [self valueForKey:@"attributedMessage"];
@@ -124,7 +124,7 @@
     };
 }
 
-- (UIAlertController *(^)(UIColor*))b_messageColor{
+- (UIAlertController *(^)(UIColor*))cd_messageColor{
     return ^(UIColor* color){
         if (self.message.length>0) {
             NSAttributedString * attributedMessage = [self valueForKey:@"attributedMessage"];
@@ -141,28 +141,28 @@
         return self;
     };
 }
-- (UIAlertController *(^)(NSString*))b_messageAttributed{
+- (UIAlertController *(^)(NSString*))cd_messageAttributed{
     return ^(NSString* string){
         [self setValue:string forKey:@"attributedMessage"];
         return self;
     };
 }
 #pragma mark ----- 按钮
-- (UIAlertController *(^)(NSString*))b_action{
+- (UIAlertController *(^)(NSString*))cd_action{
     return ^(NSString* text){
         UIAlertAction * action = [UIAlertAction actionWithTitle:text style:0 handler:nil];
         [self addAction:action];
         return self;
     };
 }
-- (UIAlertController *(^)(void (^)(UIAlertAction *action)))b_actionHandler{
+- (UIAlertController *(^)(void (^)(UIAlertAction *action)))cd_actionHandler{
     return ^(void (^handler)(UIAlertAction *action)){
         UIAlertAction * action = [UIAlertAction actionWithTitle:@"" style:0 handler:handler];
         [self addAction:action];
         return self;
     };
 }
-- (UIAlertController *(^)(void(^custom)(UIAlertAction * action)))b_actionCustom{
+- (UIAlertController *(^)(void(^custom)(UIAlertAction * action)))cd_actionCustom{
     return ^(void(^custom)(UIAlertAction * action)){
         UIAlertAction * action = [UIAlertAction actionWithTitle:@"" style:0 handler:nil];
         if (custom) {
@@ -177,7 +177,7 @@
 
 @implementation UIAlertAction (Chain)
 
-- (UIAlertAction *(^)(NSString*))b_text{
+- (UIAlertAction *(^)(NSString*))cd_text{
     return ^(NSString* text){
         if (text) {
             [self setValue:text forKey:@"title"];
@@ -185,7 +185,7 @@
         return self;
     };
 }
-- (UIAlertAction *(^)(UIColor*))b_textColor{
+- (UIAlertAction *(^)(UIColor*))cd_textColor{
     return ^(UIColor* color){
         if (color) {
             [self setValue:color forKey:@"titleTextColor"];
@@ -194,13 +194,13 @@
     };
 }
 
-- (UIAlertAction *(^)(UIAlertActionStyle))b_style{
+- (UIAlertAction *(^)(UIAlertActionStyle))cd_style{
     return ^(UIAlertActionStyle style){
         [self setValue:@(style) forKey:@"style"];
         return self;
     };
 }
-- (UIAlertAction *(^)(void(^handler)(UIAlertAction * _Nonnull action)))b_handler{
+- (UIAlertAction *(^)(void(^handler)(UIAlertAction * _Nonnull action)))cd_handler{
     return ^(void(^handler)(UIAlertAction * _Nonnull action)){
         [self setValue:handler forKey:@"handler"];
         return self;

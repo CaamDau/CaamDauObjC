@@ -1,10 +1,4 @@
-//
-//  CD_Row.m
-//  SIGOODS
-//
-//  Created by LCD on 2018/7/25.
-//  Copyright © 2018年 erazar. All rights reserved.
-//
+
 
 #import "CD_Row.h"
 

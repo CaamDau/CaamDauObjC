@@ -2,90 +2,90 @@
 #import "UIButton+Chain.h"
 
 @implementation UIButton (Chain)
-- (UIButton * (^)(NSString *))b_title{
+- (UIButton * (^)(NSString *))cd_title{
     return ^(NSString * a){
-        self.b_titleState(a,UIControlStateNormal);
+        self.cd_titleState(a,UIControlStateNormal);
         return self;
     };
 }
 
-- (UIButton * (^)(NSString *, UIControlState))b_titleState{
+- (UIButton * (^)(NSString *, UIControlState))cd_titleState{
     return ^(NSString *a, UIControlState b){
         [self setTitle:a forState:b];
         return self;
     };
 }
 
-- (UIButton * (^)(UIColor *))b_titleColor{
+- (UIButton * (^)(UIColor *))cd_titleColor{
     return ^(UIColor * a){
-        self.b_titleColorState(a,UIControlStateNormal);
+        self.cd_titleColorState(a,UIControlStateNormal);
         return self;
     };
 }
 
-- (UIButton * (^)(UIColor *, UIControlState))b_titleColorState{
+- (UIButton * (^)(UIColor *, UIControlState))cd_titleColorState{
     return ^(UIColor *a, UIControlState b){
         [self setTitleColor:a forState:b];
         return self;
     };
 }
 
-- (UIButton * (^)(UIFont *))b_titleFont{
+- (UIButton * (^)(UIFont *))cd_titleFont{
     return ^(UIFont *a){
         self.titleLabel.font = a;
         return self;
     };
 }
 
-- (UIButton * (^)(UIImage *))b_image{
+- (UIButton * (^)(UIImage *))cd_image{
     return ^(UIImage *a){
         [self setImage:a forState:UIControlStateNormal];
         return self;
     };
 }
 
-- (UIButton * (^)(UIImage *, UIControlState))b_imageState{
+- (UIButton * (^)(UIImage *, UIControlState))cd_imageState{
     return ^(UIImage *a, UIControlState b){
         [self setImage:a forState:b];
         return self;
     };
 }
 
-- (UIButton * (^)(UIImage *))b_bgImage{
+- (UIButton * (^)(UIImage *))cd_bgImage{
     return ^(UIImage *a){
         [self setBackgroundImage:a forState:UIControlStateNormal];
         return self;
     };
 }
 
-- (UIButton * (^)(UIImage *, UIControlState))b_bgImageState{
+- (UIButton * (^)(UIImage *, UIControlState))cd_bgImageState{
     return ^(UIImage *a, UIControlState b){
         [self setBackgroundImage:a forState:b];
         return self;
     };
 }
 
-- (UIButton * (^)(NSAttributedString *))b_attributedTitle{
+- (UIButton * (^)(NSAttributedString *))cd_attributedTitle{
     return ^(NSAttributedString * a){
         [self setAttributedTitle:a forState:UIControlStateNormal];
         return self;
     };
 }
-- (UIButton * (^)(NSAttributedString *, UIControlState))b_attributedTitleState{
+- (UIButton * (^)(NSAttributedString *, UIControlState))cd_attributedTitleState{
     return ^(NSAttributedString * a, UIControlState b){
         [self setAttributedTitle:a forState:b];
         return self;
     };
 }
 
-- (UIButton * (^)(CGFloat , CGFloat, CGFloat, CGFloat))b_titleEdgeInsets{
+- (UIButton * (^)(CGFloat , CGFloat, CGFloat, CGFloat))cd_titleEdgeInsets{
     return ^(CGFloat top, CGFloat left, CGFloat bottom, CGFloat right){
         self.titleEdgeInsets = UIEdgeInsetsMake(top, left, bottom, right);
         return self;
     };
 }
 
-- (UIButton * (^)(CGFloat , CGFloat, CGFloat, CGFloat))b_imageEdgeInsets{
+- (UIButton * (^)(CGFloat , CGFloat, CGFloat, CGFloat))cd_imageEdgeInsets{
     return ^(CGFloat top, CGFloat left, CGFloat bottom, CGFloat right){
         self.imageEdgeInsets = UIEdgeInsetsMake(top, left, bottom, right);;
         return self;
@@ -93,13 +93,13 @@
 }
 
 
-- (UIButton * (^)(UIControlContentHorizontalAlignment))b_contentHorizontalAlignment{
+- (UIButton * (^)(UIControlContentHorizontalAlignment))cd_contentHorizontalAlignment{
     return ^(UIControlContentHorizontalAlignment a){
         self.contentHorizontalAlignment = a;
         return self;
     };
 }
-- (UIButton * (^)(UIControlContentVerticalAlignment))b_contentVerticalAlignment{
+- (UIButton * (^)(UIControlContentVerticalAlignment))cd_contentVerticalAlignment{
     return ^(UIControlContentVerticalAlignment a){
         self.contentVerticalAlignment = a;
         return self;
@@ -107,25 +107,25 @@
 }
 
 
-- (UIButton * (^)(BOOL))b_reversesTitleShadowWhenHighlighted{
+- (UIButton * (^)(BOOL))cd_reversesTitleShadowWhenHighlighted{
     return ^(BOOL a){
         self.reversesTitleShadowWhenHighlighted = a;
         return self;
     };
 }
-- (UIButton * (^)(BOOL))b_adjustsImageWhenHighlighted{
+- (UIButton * (^)(BOOL))cd_adjustsImageWhenHighlighted{
     return ^(BOOL a){
         self.adjustsImageWhenHighlighted = a;
         return self;
     };
 }
-- (UIButton * (^)(BOOL))b_adjustsImageWhenDisabled{
+- (UIButton * (^)(BOOL))cd_adjustsImageWhenDisabled{
     return ^(BOOL a){
         self.adjustsImageWhenDisabled = a;
         return self;
     };
 }
-- (UIButton * (^)(BOOL))b_showsTouchWhenHighlighted{
+- (UIButton * (^)(BOOL))cd_showsTouchWhenHighlighted{
     return ^(BOOL a){
         self.showsTouchWhenHighlighted = a;
         return self;
@@ -133,7 +133,7 @@
 }
 
 
-- (UIButton * (^)(UIColor *bg, UIActivityIndicatorViewStyle st))b_loading{
+- (UIButton * (^)(UIColor *bg, UIActivityIndicatorViewStyle st))cd_loading{
     return ^(UIColor * b, UIActivityIndicatorViewStyle s){
         self.enabled = NO;
         UIView * v = [UIView new];
@@ -149,7 +149,7 @@
     };
 }
 
-- (UIButton * (^)(UIColor *bg, UIColor *act, UIActivityIndicatorViewStyle st, CGPoint po))b_loadingC{
+- (UIButton * (^)(UIColor *bg, UIColor *act, UIActivityIndicatorViewStyle st, CGPoint po))cd_loadingC{
     return ^(UIColor * b, UIColor *act, UIActivityIndicatorViewStyle s, CGPoint p){
         self.enabled = NO;
         UIActivityIndicatorView * activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:s];
@@ -167,7 +167,7 @@
     };
 }
 /// 向Button上添加 Activity loading 自定义Activity
-- (UIButton * (^)(void (^)(void)))b_loadingCustom{
+- (UIButton * (^)(void (^)(void)))cd_loadingCustom{
     return ^( void (^custom)(void)){
         if (custom) {
             custom();
@@ -176,7 +176,7 @@
     };
 }
 
-- (UIButton * (^)(void))b_loadingHidden{
+- (UIButton * (^)(void))cd_loadingHidden{
     return ^(void){
         [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             if (obj.tag == -8668) {
@@ -189,7 +189,7 @@
     };
 }
 
-- (UIButton * (^)(NSInteger))b_hiddenLoadingTag{
+- (UIButton * (^)(NSInteger))cd_hiddenLoadingTag{
     return ^(NSInteger tag){
         __block NSInteger t = tag;
         [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
