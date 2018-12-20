@@ -81,6 +81,6 @@
 }
 
 - (NSString *)identifier {
-    return self.identifier ? self.identifier : NSStringFromClass(self.cellClass);
+    return _identifier ? _identifier : NSStringFromClass(self.cellClass);
 }
 @end
