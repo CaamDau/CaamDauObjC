@@ -7,6 +7,7 @@
 - (UIButton * (NS_NOESCAPE ^)(UIColor *))cd_titleColor;
 - (UIButton * (NS_NOESCAPE ^)(UIColor *, UIControlState))cd_titleColorState;
 - (UIButton * (NS_NOESCAPE ^)(UIFont *))cd_titleFont;
+- (UIButton * (NS_NOESCAPE ^)(BOOL))cd_enabled;
 - (UIButton * (NS_NOESCAPE ^)(UIImage *))cd_image;
 - (UIButton * (NS_NOESCAPE ^)(UIImage *, UIControlState))cd_imageState;
 - (UIButton * (NS_NOESCAPE ^)(UIImage *))cd_bgImage;
@@ -31,5 +32,5 @@
 /// 向Button上添加 自定义 loading
 - (UIButton * (NS_NOESCAPE ^)(void (^)(void)))cd_loadingCustom;
 /// 将 指定 loading remove 配合 cd_loadingCustom 使用
-- (UIButton * (NS_NOESCAPE ^)(NSInteger))cd_hiddenLoadingTag;
+- (UIButton * (NS_NOESCAPE ^)(NSInteger))cd_loadingHiddenTag;
 @end

@@ -36,7 +36,13 @@
         return self;
     };
 }
-
+- (UIButton * (^)(BOOL))cd_enabled{
+    return ^(BOOL a){
+        self.enabled = a;
+        return self;
+    };
+}
+ 
 - (UIButton * (^)(UIImage *))cd_image{
     return ^(UIImage *a){
         [self setImage:a forState:UIControlStateNormal];
@@ -159,7 +165,9 @@
         v.bounds = activity.bounds;
         v.tag = -8668;
         v.backgroundColor = b;
-        activity.color = act;
+        if (act) {
+            activity.color = act;
+        }
         activity.frame = v.bounds;
         [self addSubview:v];
         [v addSubview:activity];
@@ -189,7 +197,7 @@
     };
 }
 
-- (UIButton * (^)(NSInteger))cd_hiddenLoadingTag{
+- (UIButton * (^)(NSInteger))cd_loadingHiddenTag{
     return ^(NSInteger tag){
         __block NSInteger t = tag;
         [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {

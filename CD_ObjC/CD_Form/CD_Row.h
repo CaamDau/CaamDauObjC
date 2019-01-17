@@ -4,10 +4,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void (^CD_RowDidSelectBlock)(void);
+typedef void (^CD_RowCallBack)(id any);
+
 @protocol CD_RowDelegate <NSObject>
 @optional
 - (void)row_updateViewData:(id)viewData tag:(NSNumber*)tag;
 - (void)row_updateViewData:(id)viewData;
+- (void)row_callBack:(CD_RowCallBack)callBack;
 @end
 
 
@@ -20,10 +24,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, assign) CGSize size;
 @property(nonatomic, assign) CGFloat height;
 
-/// Cell 类
-@property(nonatomic, strong) Class cellClass;
+/// view Class 类
+@property(nonatomic, strong) Class viewClass;
 /// 数据源
 @property(nonatomic, strong) id viewData;
+/// view 内部事件回调
+@property(nonatomic, copy) CD_RowCallBack callBack;
+/// view 点击回调
+@property(nonatomic, copy) CD_RowDidSelectBlock didSelectBlock;
 ///
 - (instancetype)initWithViewClass:(Class)cls;
 - (instancetype)initWithViewClass:(Class)cls viewData:(id)viewData;
@@ -31,8 +39,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithViewClass:(Class)cls viewData:(id)viewData size:(CGSize)size;
 - (instancetype)initWithViewClass:(Class)cls viewData:(id)viewData height:(CGFloat)height;
 
-    
-- (void)updateView:(UIView *)view;
+
+- (void)bindView:(UIView *)view;
 @end
 
 

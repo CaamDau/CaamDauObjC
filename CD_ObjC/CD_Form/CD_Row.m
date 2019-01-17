@@ -19,8 +19,8 @@
 - (CGFloat)height{
     return self.frame.size.height;
 }
-    
-    
+
+
 - (instancetype)initWithViewClass:(Class)cls {
     if (self = [self initWithViewClass:cls viewData:@""]) {
         
@@ -36,7 +36,7 @@
 
 - (instancetype)initWithViewClass:(Class)cls viewData:(id)viewData size:(CGSize)size {
     if (self = [super init]) {
-        self.cellClass = cls;
+        self.viewClass = cls;
         self.viewData = viewData;
         self.size = size;
     }
@@ -44,7 +44,7 @@
 }
 - (instancetype)initWithViewClass:(Class)cls viewData:(id)viewData frame:(CGRect)frame{
     if (self = [super init]) {
-        self.cellClass = cls;
+        self.viewClass = cls;
         self.viewData = viewData;
         self.frame = frame;
     }
@@ -52,13 +52,13 @@
 }
 - (instancetype)initWithViewClass:(Class)cls viewData:(id)viewData height:(CGFloat)height{
     if (self = [super init]) {
-        self.cellClass = cls;
+        self.viewClass = cls;
         self.viewData = viewData;
         self.height = height;
     }
     return self;
 }
-    
+
 - (instancetype)init
 {
     self = [super init];
@@ -67,8 +67,8 @@
     }
     return self;
 }
-    
-- (void)updateView:(UIView *)view {
+
+- (void)bindView:(UIView *)view {
     if ([view respondsToSelector:@selector(row_updateViewData:)]) {
         __weak typeof(self.viewData) weakViewData = self.viewData;
         [view performSelector:@selector(row_updateViewData:) withObject:weakViewData];
@@ -78,9 +78,14 @@
         __weak typeof(self.viewData) weakViewData = self.viewData;
         [view performSelector:@selector(row_updateViewData:tag:) withObject:weakViewData withObject:@(self.tag)];
     }
+    
+    if (self.callBack && [view respondsToSelector:@selector(row_callBack:)])
+    {
+        [view performSelector:@selector(row_callBack:) withObject:self.callBack];
+    }
 }
 
 - (NSString *)identifier {
-    return _identifier ? _identifier : NSStringFromClass(self.cellClass);
+    return _identifier ? _identifier : NSStringFromClass(self.viewClass);
 }
 @end
