@@ -1,8 +1,7 @@
 /*** 模块文档 ***
  UI排版 插件
  
- 👉👉👉 比如，一个复杂的TableView界面，你的UITableViewDelegate 可能会这样：
- 
+ 👉👉👉 比如，一个复杂的TableView界面，你的UITableViewDelegate 可能会这样，复杂的业务逻辑，极高的维护难度，控制器代码冗杂难看，可读性极差：
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     switch (section) {
         case 0:
@@ -227,7 +226,7 @@
     return _formsHead;
 }
 */
-
+// 附上Swift 版本：https://github.com/liucaide/CD
 
 
 
