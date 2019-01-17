@@ -23,7 +23,15 @@ typedef void (^CD_RowCallBack)(id any);
 @property(nonatomic, assign) CGRect frame;
 @property(nonatomic, assign) CGSize size;
 @property(nonatomic, assign) CGFloat height;
-
+/**
+ 用于UICollectionView sectionInset，
+ 另 LineSpacing InteritemSpacing 使用 frame - x  y
+ 用于 UIButton imageEdgeInsets
+ */
+///UIEdgeInsets
+@property(nonatomic, assign) UIEdgeInsets insets;
+/// UIEdgeInsets 可用于 UIButton imageEdgeInsets
+@property(nonatomic, assign) UIEdgeInsets insetsTitle;
 /// view Class 类
 @property(nonatomic, strong) Class viewClass;
 /// 数据源
