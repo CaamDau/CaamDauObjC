@@ -3,7 +3,7 @@
 #import "CD_Row.h"
 
 @interface CD_Row()
-
+@property(nonatomic, copy, readwrite) NSString *identifier;
 @end
 
 @implementation CD_Row

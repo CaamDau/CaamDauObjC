@@ -83,7 +83,11 @@
 
 - (UILabel * (^)(BOOL))cd_allowsDefaultTighteningForTruncation{
     return ^(BOOL a){
-        self.allowsDefaultTighteningForTruncation = a;
+        if (@available(iOS 9.0, *)) {
+            self.allowsDefaultTighteningForTruncation = a;
+        } else {
+            // Fallback on earlier versions
+        }
         return self;
     };
 }
