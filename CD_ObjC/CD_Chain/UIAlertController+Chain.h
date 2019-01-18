@@ -45,9 +45,8 @@
 - (UIAlertController *(NS_NOESCAPE ^)(NSString*))cd_messageAttributed;
 #pragma mark ----- 按钮
 /// 按钮
-- (UIAlertController *(NS_NOESCAPE ^)(NSString*))cd_action;
-/// 按钮 + 回调
-- (UIAlertController *(^)(void (^)(UIAlertAction *action)))cd_actionHandler;
+- (UIAlertController *(NS_NOESCAPE ^)(NSString*text, void (^handler)(void)))cd_action;
+
 /// 按钮 + 自定义 回调包含在内
 - (UIAlertController *(^)(void(^)(UIAlertAction * action)))cd_actionCustom;
 @end

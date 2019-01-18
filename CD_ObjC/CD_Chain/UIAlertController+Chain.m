@@ -148,20 +148,18 @@
     };
 }
 #pragma mark ----- 按钮
-- (UIAlertController *(^)(NSString*))cd_action{
-    return ^(NSString* text){
-        UIAlertAction * action = [UIAlertAction actionWithTitle:text style:0 handler:nil];
+- (UIAlertController *(^)(NSString*text, void (^handler)(void)))cd_action{
+    return ^(NSString* t, void (^h)(void)){
+        UIAlertAction * action = [UIAlertAction actionWithTitle:t style:0 handler:^(UIAlertAction * _Nonnull action) {
+            if (h) {
+                h();
+            }
+        }];
         [self addAction:action];
         return self;
     };
 }
-- (UIAlertController *(^)(void (^)(UIAlertAction *action)))cd_actionHandler{
-    return ^(void (^handler)(UIAlertAction *action)){
-        UIAlertAction * action = [UIAlertAction actionWithTitle:@"" style:0 handler:handler];
-        [self addAction:action];
-        return self;
-    };
-}
+
 - (UIAlertController *(^)(void(^custom)(UIAlertAction * action)))cd_actionCustom{
     return ^(void(^custom)(UIAlertAction * action)){
         UIAlertAction * action = [UIAlertAction actionWithTitle:@"" style:0 handler:nil];
