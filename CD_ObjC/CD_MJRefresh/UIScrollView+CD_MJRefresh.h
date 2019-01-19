@@ -1,10 +1,47 @@
-//
-//  UIScrollView+CD_MJRefresh.h
-//  CD_Kit
-//
-//  Created by LCD on 2018/3/5.
-//  Copyright © 2018年 LCD. All rights reserved.
-//
+//Created  on 2018/3/5  by LCD :https://github.com/liucaide .
+
+/*** 模块文档 ***
+ 使用 示例
+- (void)cd_addMJRefresh{
+    // ---> 可单独在某一页面配置 cd_mjRefreshModel 达到与其他页面不同效果
+    CD_MJRefreshModel *model = [CD_MJRefreshModel new];
+    model.labelHiddenDown = NO;
+    model.titleRefreshingDown = @"正在刷新";
+    self.tableView.cd_mjRefreshModel = model;
+    // <---
+ 
+    [self.tableView cd_headerAddMJRefresh:^{
+        @strongify(self)
+        [self.vm requestDataRefresh:YES];
+    }];
+    [self.tableView cd_footerAddMJRefreshAuto:^{
+        @strongify(self)
+        [self.vm requestDataRefresh:NO];
+    }];
+    [self.tableView cd_mjRefreshTypes:self.vm.refreshTypes];
+}
+
+// ---> 当然也可以配置全局 cd_mjRefreshModel 统一刷新效果
+        创建一个分类 重写 cd_mjRefreshModel 的Get 方法
+@interface UIScrollView (CD_MJRefreshModelCustom)
+@end
+@implementation UIScrollView (CD_MJRefreshModelCustom)
+
+- (CD_MJRefreshModel *)cd_mjRefreshModel{
+    CD_MJRefreshModel * model = objc_getAssociatedObject(self, _cmd);
+    if (model) {
+        return model;
+    }else{
+        [self setCd_mjRefreshModel:[CD_MJRefreshModel new]];
+        model = [CD_MJRefreshModel new];
+        model.labelHiddenDown = NO;
+        model.titleRefreshingDown = @"1234567";
+    }
+    return model;
+}
+@end
+*/
+ 
 
 #import <UIKit/UIKit.h>
 #import <MJRefresh/MJRefresh.h>
@@ -27,7 +64,7 @@ typedef NS_ENUM(NSUInteger, CD_MJRefreshType) {
 
 @interface UIScrollView (CD_MJRefresh)
 
-@property (nonatomic, strong) CD_MJRefreshModel * cd_mjRefreshModel;
+@property (nonatomic, strong) CD_MJRefreshModel * cd_mjRefreshModel UI_APPEARANCE_SELECTOR;
 
 /// 添加头部下拉刷新
 - (void)cd_headerAddMJRefresh:(MJRefreshComponentRefreshingBlock)block;

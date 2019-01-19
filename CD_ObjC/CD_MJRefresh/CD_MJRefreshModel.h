@@ -62,7 +62,14 @@
 @end
 
 /*
-@interface CD_MJRefreshManage : CD_Single
+#pragma mark ----- 全局单例
+@interface CD_MJRefreshManage : NSObject
+
+-(nonnull instancetype)init NS_UNAVAILABLE;
++ (nonnull instancetype)new NS_UNAVAILABLE;
++ (instancetype)shared;
+
 @property (strong, nonatomic) CD_MJRefreshModel * model;
+
 @end
 */

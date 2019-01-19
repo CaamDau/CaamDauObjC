@@ -1,10 +1,4 @@
-//
-//  UIScrollView+CD_MJRefresh.m
-//  CD_Kit
-//
-//  Created by LCD on 2018/3/5.
-//  Copyright © 2018年 LCD. All rights reserved.
-//
+///Created  on 2018/3/5  by LCD :https://github.com/liucaide .
 
 #import "UIScrollView+CD_MJRefresh.h"
 
@@ -15,11 +9,9 @@
 }
 - (CD_MJRefreshModel *)cd_mjRefreshModel{
     CD_MJRefreshModel * model = objc_getAssociatedObject(self, _cmd);
-    if (model) {
-        return model;
-    }else{
-        [self setCd_mjRefreshModel:[CD_MJRefreshModel new]];
+    if (model == nil){
         model = [CD_MJRefreshModel new];
+        [self setCd_mjRefreshModel:model];
     }
     return model;
 }

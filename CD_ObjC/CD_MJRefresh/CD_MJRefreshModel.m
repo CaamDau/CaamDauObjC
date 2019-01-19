@@ -9,7 +9,6 @@
 #import "CD_MJRefreshModel.h"
 
 @implementation CD_MJRefreshModel
-//自定义初始化方法
 - (instancetype)init
 {
     self = [super init];
@@ -115,9 +114,19 @@
 }
 @end
 
+
+
 /*
 @implementation CD_MJRefreshManage
-
++ (instancetype) shared
+{
+    static CD_MJRefreshManage * sharedManage;
+    static dispatch_once_t once;
+    dispatch_once(&once, ^{
+        sharedManage = [[self alloc] init];
+    });
+    return sharedManage;
+}
 
 - (CD_MJRefreshModel *)model{
     if (!_model) {
