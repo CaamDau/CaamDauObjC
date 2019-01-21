@@ -32,10 +32,10 @@
     if (model) {
         return model;
     }else{
-        [self setCd_mjRefreshModel:[CD_MJRefreshModel new]];
         model = [CD_MJRefreshModel new];
         model.labelHiddenDown = NO;
         model.titleRefreshingDown = @"1234567";
+        [self setCd_mjRefreshModel:model];
     }
     return model;
 }

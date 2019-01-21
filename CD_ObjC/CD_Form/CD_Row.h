@@ -263,7 +263,7 @@ typedef void (^CD_RowCallBack)(id any);
  */
 ///UIEdgeInsets
 @property(nonatomic, assign) UIEdgeInsets insets;
-/// UIEdgeInsets 可用于 UIButton imageEdgeInsets
+/// UIEdgeInsets 可用于 UIButton titleEdgeInsets
 @property(nonatomic, assign) UIEdgeInsets insetsTitle;
 /// view Class 类
 @property(nonatomic, strong) Class viewClass;
