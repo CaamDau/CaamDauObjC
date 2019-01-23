@@ -69,14 +69,15 @@
 }
 
 - (void)bindView:(UIView *)view {
+    if (![view conformsToProtocol:@protocol(CD_RowDelegate)]) {
+        return;
+    }
     if ([view respondsToSelector:@selector(row_updateViewData:)]) {
-        __weak typeof(self.viewData) weakViewData = self.viewData;
-        [view performSelector:@selector(row_updateViewData:) withObject:weakViewData];
+        [view performSelector:@selector(row_updateViewData:) withObject:self.viewData];
     }
     else if ([view respondsToSelector:@selector(row_updateViewData:tag:)])
     {
-        __weak typeof(self.viewData) weakViewData = self.viewData;
-        [view performSelector:@selector(row_updateViewData:tag:) withObject:weakViewData withObject:@(self.tag)];
+        [view performSelector:@selector(row_updateViewData:tag:) withObject:self.viewData withObject:@(self.tag)];
     }
     
     if (self.callBack && [view respondsToSelector:@selector(row_callBack:)])
