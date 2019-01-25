@@ -59,6 +59,9 @@
 @property (nonatomic, strong) NSArray<UIImage*> *imagesNoMoreDataDown;
 /// 上拉闲置状态动画图片 如果不自定义图片则置空
 @property (nonatomic, strong) NSArray<UIImage*> *imagesNoMoreDataUp;
+
+
+
 @end
 
 /*
