@@ -102,6 +102,31 @@
         return self;
     };
 }
+///设置部分圆角(绝对布局)
+- (UIView *(^)(UIRectCorner, CGSize))cd_byRoundedCornersRadii{
+    return ^(UIRectCorner a, CGSize c) {
+        UIBezierPath* rounded = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:a cornerRadii:c];
+        CAShapeLayer* shape = [[CAShapeLayer alloc] init];
+        [shape setPath:rounded.CGPath];
+        self.layer.mask = shape;
+        return self;
+    };
+}
+///设置部分圆角(相对布局)
+- (UIView *(^)(CGRect, UIRectCorner, CGSize))cd_byRoundedRectCornersRadii{
+    return ^( CGRect r, UIRectCorner a, CGSize c) {
+        UIBezierPath* rounded = [UIBezierPath bezierPathWithRoundedRect:r byRoundingCorners:a cornerRadii:c];
+        CAShapeLayer* shape = [[CAShapeLayer alloc] init];
+        [shape setPath:rounded.CGPath];
+        self.layer.mask = shape;
+        return self;
+    };
+}
+
+
+
+
+
 - (UIView *(^)(UIColor *))cd_shadowColor{
     return ^(UIColor *c) {
         self.layer.shadowColor = c.CGColor;

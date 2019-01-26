@@ -44,27 +44,30 @@
 }
 
 - (void)cd_headerImages:(MJRefreshGifHeader*)mj model:(CD_MJRefreshModel*)model{
-    [mj setImages:model.imagesIdleDown forState:MJRefreshStateIdle];
-    [mj setImages:model.imagesPullingDown forState:MJRefreshStatePulling];
-    [mj setImages:model.imagesRefreshingDown forState:MJRefreshStateRefreshing];
-    [mj setImages:model.imagesNoMoreDataDown forState:MJRefreshStateNoMoreData];
+    [mj setImages:model.down_imgIdle forState:MJRefreshStateIdle];
+    [mj setImages:model.down_imgPulling forState:MJRefreshStatePulling];
+    [mj setImages:model.down_imgWillRefresh forState:MJRefreshStateWillRefresh];
+    [mj setImages:model.down_imgRefreshing forState:MJRefreshStateRefreshing];
+    [mj setImages:model.down_imgNoMoreData forState:MJRefreshStateNoMoreData];
 }
 - (void)cd_header:(MJRefreshStateHeader*)mj model:(CD_MJRefreshModel*)model{
-    mj.stateLabel.hidden = model.labelHiddenDown;
-    mj.lastUpdatedTimeLabel.hidden = model.timeLabelHidden;
-    if (!model.labelHiddenDown) {
-        [mj setTitle:model.titleIdleDown forState:MJRefreshStateIdle];
-        [mj setTitle:model.titlePullingDown forState:MJRefreshStatePulling];
-        [mj setTitle:model.titleRefreshingDown forState:MJRefreshStateRefreshing];
-        [mj setTitle:model.titleNoMoreDataDown forState:MJRefreshStateNoMoreData];
-        mj.stateLabel.font = model.labelFont;
-        mj.stateLabel.textColor = model.labelColor;
+    mj.stateLabel.hidden = model.down_txtHidden;
+    mj.lastUpdatedTimeLabel.hidden = model.down_timeHidden;
+    mj.labelLeftInset = model.down_leftInset;
+    if (!model.down_txtHidden) {
+        [mj setTitle:model.down_txtIdle forState:MJRefreshStateIdle];
+        [mj setTitle:model.down_txtPulling forState:MJRefreshStatePulling];
+        [mj setTitle:model.down_txtWillRefresh forState:MJRefreshStateWillRefresh];
+        [mj setTitle:model.down_txtRefreshing forState:MJRefreshStateRefreshing];
+        [mj setTitle:model.down_txtNoMoreData forState:MJRefreshStateNoMoreData];
+        mj.stateLabel.font = model.down_txtFont;
+        mj.stateLabel.textColor = model.down_txtColor;
     }
-    if (!model.timeLabelHidden) {
-        mj.lastUpdatedTimeLabel.font = model.labelFont;
-        mj.lastUpdatedTimeLabel.textColor = model.labelColor;
+    if (!model.down_timeHidden) {
+        mj.lastUpdatedTimeLabel.font = model.down_timeFont;
+        mj.lastUpdatedTimeLabel.textColor = model.down_timeColor;
     }
-    mj.labelLeftInset = model.labelLeftInset;
+    mj.ignoredScrollViewContentInsetTop = model.ignoredContentInsetTop;
 }
 #pragma mark ----- 上拉加载 -----
 - (void)cd_footerAddMJRefreshAuto:(MJRefreshComponentRefreshingBlock)block{
@@ -81,7 +84,6 @@
 
 - (void)cd_footerAddMJRefreshGifAuto:(MJRefreshComponentRefreshingBlock)block{
     MJRefreshAutoGifFooter * mj = [MJRefreshAutoGifFooter footerWithRefreshingBlock:block];
-    CD_MJRefreshModel * manage = self.cd_mjRefreshModel;
     [self cd_footerImagesAuto:mj model:self.cd_mjRefreshModel];
     [self cd_footerAuto:mj model:self.cd_mjRefreshModel];
     self.mj_footer = mj;
@@ -100,65 +102,71 @@
 }
 - (void)cd_footerAddMJRefreshBack:(CD_MJRefreshModel*)model block:(MJRefreshComponentRefreshingBlock)block{
     MJRefreshBackNormalFooter * mj = [MJRefreshBackNormalFooter footerWithRefreshingBlock:block];
-    [self cd_footerBack:mj model:self.cd_mjRefreshModel];
+    [self cd_footerBack:mj model:model];
     self.mj_footer = mj;
 }
 
 - (void)cd_footerAddMJRefreshGifAuto:(CD_MJRefreshModel*)model block:(MJRefreshComponentRefreshingBlock)block{
     MJRefreshAutoGifFooter * mj = [MJRefreshAutoGifFooter footerWithRefreshingBlock:block];
-    CD_MJRefreshModel * manage = self.cd_mjRefreshModel;
-    [self cd_footerImagesAuto:mj model:self.cd_mjRefreshModel];
-    [self cd_footerAuto:mj model:self.cd_mjRefreshModel];
+    [self cd_footerImagesAuto:mj model:model];
+    [self cd_footerAuto:mj model:model];
     self.mj_footer = mj;
 }
 
 - (void)cd_footerAddMJRefreshGifBack:(CD_MJRefreshModel*)model block:(MJRefreshComponentRefreshingBlock)block{
     MJRefreshBackGifFooter * mj = [MJRefreshBackGifFooter footerWithRefreshingBlock:block];
-    [self cd_footerImagesBack:mj model:self.cd_mjRefreshModel];
-    [self cd_footerBack:mj model:self.cd_mjRefreshModel];
+    [self cd_footerImagesBack:mj model:model];
+    [self cd_footerBack:mj model:model];
     self.mj_footer = mj;
 }
 
 
 - (void)cd_footerImagesBack:(MJRefreshBackGifFooter*)mj model:(CD_MJRefreshModel*)model{
-    [mj setImages:model.imagesIdleUp forState:MJRefreshStateIdle];
-    [mj setImages:model.imagesPullingUp forState:MJRefreshStatePulling];
-    [mj setImages:model.imagesRefreshingUp forState:MJRefreshStateRefreshing];
-    [mj setImages:model.imagesNoMoreDataUp forState:MJRefreshStateNoMoreData];
+    [mj setImages:model.up_imgIdle forState:MJRefreshStateIdle];
+    [mj setImages:model.up_imgPulling forState:MJRefreshStatePulling];
+    [mj setImages:model.up_imgWillRefresh forState:MJRefreshStateWillRefresh];
+    [mj setImages:model.up_imgRefreshing forState:MJRefreshStateRefreshing];
+    [mj setImages:model.up_imgNoMoreData forState:MJRefreshStateNoMoreData];
 }
 - (void)cd_footerImagesAuto:(MJRefreshAutoGifFooter*)mj model:(CD_MJRefreshModel*)model{
-    [mj setImages:model.imagesIdleUp forState:MJRefreshStateIdle];
-    [mj setImages:model.imagesPullingUp forState:MJRefreshStatePulling];
-    [mj setImages:model.imagesRefreshingUp forState:MJRefreshStateRefreshing];
-    [mj setImages:model.imagesNoMoreDataUp forState:MJRefreshStateNoMoreData];
+    [mj setImages:model.up_imgIdle forState:MJRefreshStateIdle];
+    [mj setImages:model.up_imgPulling forState:MJRefreshStatePulling];
+    [mj setImages:model.up_imgWillRefresh forState:MJRefreshStateWillRefresh];
+    [mj setImages:model.up_imgRefreshing forState:MJRefreshStateRefreshing];
+    [mj setImages:model.up_imgNoMoreData forState:MJRefreshStateNoMoreData];
 }
 
 - (void)cd_footerBack:(MJRefreshBackStateFooter*)mj model:(CD_MJRefreshModel*)model{
-    CD_MJRefreshModel * manage = self.cd_mjRefreshModel;
-    mj.stateLabel.hidden = manage.labelHiddenUp;
-    if (!manage.labelHiddenUp) {
-        [mj setTitle:manage.titleIdleUp forState:MJRefreshStateIdle];
-        [mj setTitle:manage.titlePullingUp forState:MJRefreshStatePulling];
-        [mj setTitle:manage.titleRefreshingUp forState:MJRefreshStateRefreshing];
-        [mj setTitle:manage.titleNoMoreDataUp forState:MJRefreshStateNoMoreData];
-        mj.stateLabel.font = manage.labelFont;
-        mj.stateLabel.textColor = manage.labelColor;
+    
+    mj.stateLabel.hidden = model.up_txtHidden;
+    mj.labelLeftInset = model.up_leftInset;
+    if (!model.up_txtHidden) {
+        [mj setTitle:model.up_txtIdle forState:MJRefreshStateIdle];
+        [mj setTitle:model.up_txtPulling forState:MJRefreshStatePulling];
+        [mj setTitle:model.up_txtWillRefresh forState:MJRefreshStateWillRefresh];
+        [mj setTitle:model.up_txtRefreshing forState:MJRefreshStateRefreshing];
+        [mj setTitle:model.up_txtNoMoreData forState:MJRefreshStateNoMoreData];
+        mj.stateLabel.font = model.up_txtFont;
+        mj.stateLabel.textColor = model.up_txtColor;
     }
-    mj.labelLeftInset = manage.labelLeftInset;
 }
 - (void)cd_footerAuto:(MJRefreshAutoStateFooter*)mj model:(CD_MJRefreshModel*)model{
-    
-    mj.stateLabel.hidden = model.labelHiddenUp;
-    if (!model.labelHiddenUp) {
-        [mj setTitle:model.titleIdleUp forState:MJRefreshStateIdle];
-        [mj setTitle:model.titlePullingUp forState:MJRefreshStatePulling];
-        [mj setTitle:model.titleRefreshingUp forState:MJRefreshStateRefreshing];
-        [mj setTitle:model.titleNoMoreDataUp forState:MJRefreshStateNoMoreData];
-        mj.stateLabel.font = model.labelFont;
-        mj.stateLabel.textColor = model.labelColor;
+    mj.refreshingTitleHidden = model.up_txtHidden;
+    mj.stateLabel.hidden = model.up_txtHidden;
+    mj.labelLeftInset = model.up_leftInset;
+    if (!model.up_txtHidden) {
+        [mj setTitle:model.up_txtIdle forState:MJRefreshStateIdle];
+        [mj setTitle:model.up_txtPulling forState:MJRefreshStatePulling];
+        [mj setTitle:model.up_txtWillRefresh forState:MJRefreshStateWillRefresh];
+        [mj setTitle:model.up_txtRefreshing forState:MJRefreshStateRefreshing];
+        [mj setTitle:model.up_txtNoMoreData forState:MJRefreshStateNoMoreData];
+        mj.stateLabel.font = model.up_txtFont;
+        mj.stateLabel.textColor = model.up_txtColor;
     }
-    mj.labelLeftInset = model.labelLeftInset;
-    mj.automaticallyRefresh = model.automaticallyRefresh;
+    mj.automaticallyRefresh = model.isAutoRefresh;
+    mj.ignoredScrollViewContentInsetBottom = model.ignoredContentInsetBottom;
+    mj.triggerAutomaticallyRefreshPercent = model.autoRefreshPercent;
+    mj.onlyRefreshPerDrag = model.onlyRefreshPerDrag;
 }
 
 

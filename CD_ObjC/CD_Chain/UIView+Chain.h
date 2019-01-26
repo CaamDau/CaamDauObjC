@@ -21,6 +21,23 @@
 - (UIView *(NS_NOESCAPE ^)(CGFloat))cd_cornerRadius;
 - (UIView *(NS_NOESCAPE ^)(BOOL))cd_clipsToBounds;
 - (UIView *(NS_NOESCAPE ^)(CGFloat, BOOL))cd_radius_clips;
+/**
+ *  设置部分圆角(绝对布局)
+ *
+ *  @param corners 圆角类型组 UIRectCornerTopLeft | UIRectCornerTopRight | UIRectCornerBottomLeft | UIRectCornerBottomRight | UIRectCornerAllCorners
+ *  @param radii   圆角大小 例如 CGSizeMake(20.0f, 20.0f)
+ */
+/// 设置部分圆角(绝对布局)
+- (UIView *(NS_NOESCAPE ^)(UIRectCorner, CGSize))cd_byRoundedCornersRadii;
+/**
+ *  设置部分圆角(相对布局)
+ *  @param rect    圆角view的rect
+ *  @param corners 圆角类型组 UIRectCornerTopLeft | UIRectCornerTopRight | UIRectCornerBottomLeft | UIRectCornerBottomRight | UIRectCornerAllCorners
+ *  @param radii   圆角大小 例如 CGSizeMake(20.0f, 20.0f)
+ *
+ */
+/// 设置部分圆角(相对布局)
+- (UIView *(NS_NOESCAPE ^)(UIRectCorner, CGSize, CGRect))cd_byRoundedRectCornersRadii;
 
 /// 变形属性(平移\缩放\旋转)
 - (UIView *(NS_NOESCAPE ^)(CGAffineTransform))cd_transform;

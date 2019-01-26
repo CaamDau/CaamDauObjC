@@ -153,7 +153,7 @@
         [v addSubview:act];
         ///超时
         __weak typeof(self) weakSelf = self;
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             __strong typeof(weakSelf) strongSelf = weakSelf;
             strongSelf.cd_loadingHidden();
         });
@@ -177,6 +177,12 @@
         activity.frame = v.bounds;
         [self addSubview:v];
         [v addSubview:activity];
+        ///超时
+        __weak typeof(self) weakSelf = self;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            strongSelf.cd_loadingHidden();
+        });
         return self;
     };
 }
