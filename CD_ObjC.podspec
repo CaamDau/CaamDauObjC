@@ -16,14 +16,36 @@ TODO: Add long description of the pod here.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
-
-  s.source_files = 'CD_ObjC/**/*'
+  
+  s.default_subspec = 'Core'
+  
+  s.subspec 'Core' do |cd|
+      cd.dependency 'CD_ObjC/Form'
+      cd.dependency 'CD_ObjC/Chain'
+  end
+  
+  s.subspec 'All' do |all|
+      all.dependency 'CD_ObjC/Core'
+      all.dependency 'CD_ObjC/MJRefresh'
+      
+  end
+  
+  s.subspec 'Form' do |fm|
+      fm.source_files = 'CD_ObjC/CD_Form/*.{h,m}'
+  end
+  s.subspec 'Chain' do |cn|
+      cn.source_files = 'CD_ObjC/CD_Chain/*.{h,m}'
+  end
+  # ---- 第三方 扩展 或 桥接
+  s.subspec 'MJRefresh' do |mj|
+      mj.source_files = 'CD_ObjC/CD_MJRefresh/*.{h,m}'
+      mj.dependency 'MJRefresh'
+  end
   
   # s.resource_bundles = {
   #   'CD_ObjC' => ['CD_ObjC/Assets/*.png']
   # }
-
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  s.frameworks = 'UIKit', 'Foundation'
   # s.dependency 'AFNetworking', '~> 2.3'
 end

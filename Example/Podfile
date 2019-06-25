@@ -3,7 +3,7 @@ use_frameworks!
 platform :ios, '8.0'
 
 target 'CD_ObjC_Example' do
-  pod 'CD_ObjC', :path => '../'
+  pod 'CD_ObjC/All', :path => '../'
 
   target 'CD_ObjC_Tests' do
     inherit! :search_paths
