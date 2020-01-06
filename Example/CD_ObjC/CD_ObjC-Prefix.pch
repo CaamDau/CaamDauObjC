@@ -5,7 +5,7 @@
 //
 
 #import <Availability.h>
-
+#import <CaamDauObjC/CaamDauObjC.h>
 #ifndef __IPHONE_5_0
 #warning "This project uses features only available in iOS SDK 5.0 and later."
 #endif
@@ -14,3 +14,5 @@
     @import UIKit;
     @import Foundation;
 #endif
+
+

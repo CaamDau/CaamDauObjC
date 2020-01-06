@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4741DDE123BED408002FD4A3 /* CaamDauObjC.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 4741DDE023BED407002FD4A3 /* CaamDauObjC.podspec */; };
+		4772171323C311C300C4F676 /* Cell_Title.m in Sources */ = {isa = PBXBuildFile; fileRef = 4772171223C311C300C4F676 /* Cell_Title.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -40,6 +42,9 @@
 		164BF9D9FF5225C06FAA0CCC /* Pods-CD_ObjC_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CD_ObjC_Tests.debug.xcconfig"; path = "Target Support Files/Pods-CD_ObjC_Tests/Pods-CD_ObjC_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		42122B436075CD29C848BA8E /* Pods_CD_ObjC_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CD_ObjC_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44671EF14D26845971E3BF53 /* Pods-CD_ObjC_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CD_ObjC_Example.debug.xcconfig"; path = "Target Support Files/Pods-CD_ObjC_Example/Pods-CD_ObjC_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		4741DDE023BED407002FD4A3 /* CaamDauObjC.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CaamDauObjC.podspec; path = ../CaamDauObjC.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4772171123C311C300C4F676 /* Cell_Title.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cell_Title.h; sourceTree = "<group>"; };
+		4772171223C311C300C4F676 /* Cell_Title.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cell_Title.m; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* CD_ObjC_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CD_ObjC_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -60,11 +65,10 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		79355857A179407CC3EFEB56 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		79355857A179407CC3EFEB56 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9837E29A7FF72E5CE8CB1338 /* Pods-CD_ObjC_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CD_ObjC_Tests.release.xcconfig"; path = "Target Support Files/Pods-CD_ObjC_Tests/Pods-CD_ObjC_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		A92C03277F9E875C46AA947E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		B4CBA99477547C00B482E632 /* CD_ObjC.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = CD_ObjC.podspec; path = ../CD_ObjC.podspec; sourceTree = "<group>"; };
+		A92C03277F9E875C46AA947E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		D08134D6E6FA7B33777C82ED /* Pods-CD_ObjC_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CD_ObjC_Example.release.xcconfig"; path = "Target Support Files/Pods-CD_ObjC_Example/Pods-CD_ObjC_Example.release.xcconfig"; sourceTree = "<group>"; };
 		E142F714AF4F6AA5BC3CBC36 /* Pods_CD_ObjC_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CD_ObjC_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -137,6 +141,8 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* CDViewController.h */,
 				6003F5A6195388D20070C39A /* CDViewController.m */,
+				4772171123C311C300C4F676 /* Cell_Title.h */,
+				4772171223C311C300C4F676 /* Cell_Title.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -178,7 +184,7 @@
 		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				B4CBA99477547C00B482E632 /* CD_ObjC.podspec */,
+				4741DDE023BED407002FD4A3 /* CaamDauObjC.podspec */,
 				A92C03277F9E875C46AA947E /* README.md */,
 				79355857A179407CC3EFEB56 /* LICENSE */,
 			);
@@ -193,7 +199,6 @@
 				164BF9D9FF5225C06FAA0CCC /* Pods-CD_ObjC_Tests.debug.xcconfig */,
 				9837E29A7FF72E5CE8CB1338 /* Pods-CD_ObjC_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -259,6 +264,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -280,6 +286,7 @@
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
+				4741DDE123BED408002FD4A3 /* CaamDauObjC.podspec in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
@@ -301,15 +308,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CD_ObjC_Tests/Pods-CD_ObjC_Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Kiwi/Kiwi.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kiwi.framework",
 			);
@@ -367,17 +370,17 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CD_ObjC_Example/Pods-CD_ObjC_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/CD_ObjC/CD_ObjC.framework",
+				"${BUILT_PRODUCTS_DIR}/CaamDauObjC/CaamDauObjC.framework",
+				"${BUILT_PRODUCTS_DIR}/Home/Home.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CD_ObjC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CaamDauObjC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Home.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -391,6 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4772171323C311C300C4F676 /* Cell_Title.m in Sources */,
 				6003F59E195388D20070C39A /* CDAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* CDViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
@@ -527,6 +531,7 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -542,6 +547,7 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

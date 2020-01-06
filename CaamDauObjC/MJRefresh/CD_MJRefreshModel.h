@@ -1,12 +1,5 @@
-//
-//  CD_MJRefreshManage.h
-//  CD_Kit
-//
-//  Created by LCD on 2018/3/5.
-//  Copyright © 2018年 LCD. All rights reserved.
-//
 
-#import "CD_Single.h"
+#import <Foundation/Foundation.h>
 
 @interface CD_MJRefreshModel : NSObject
 /// 下拉

@@ -166,7 +166,7 @@
     mj.automaticallyRefresh = model.isAutoRefresh;
     mj.ignoredScrollViewContentInsetBottom = model.ignoredContentInsetBottom;
     mj.triggerAutomaticallyRefreshPercent = model.autoRefreshPercent;
-    mj.onlyRefreshPerDrag = model.onlyRefreshPerDrag;
+    //mj.onlyRefreshPerDrag = model.onlyRefreshPerDrag;
 }
 
 
