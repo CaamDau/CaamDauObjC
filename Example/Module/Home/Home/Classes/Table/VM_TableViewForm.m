@@ -56,10 +56,7 @@
     
 }
 
-
-
 - (void)requestData:(BOOL)refresh {
-    
     [self makeForm];
 }
 @end
