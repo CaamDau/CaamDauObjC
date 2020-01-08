@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CaamDauObjC'
-  s.version          = '0.1.0'
+  s.version          = '1.0'
   s.summary          = 'A iOS development toolbox of Object-C (OC版iOS开发工具箱).'
 
   s.description      = <<-DESC
@@ -43,5 +43,4 @@ TODO: Add long description of the pod here.
   # }
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit', 'Foundation'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
