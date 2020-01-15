@@ -1,9 +1,9 @@
-# CaamDauObjC （[Swift 版本在这里](https://github.com/liucaide/CD)）
+# CaamDauObjC （[Swift 版本在这里](https://github.com/liucaide/CaamDau)）
 
-[![CI Status](https://img.shields.io/travis/liucaide/CD_ObjC.svg?style=flat)](https://travis-ci.org/liucaide/CD_ObjC)
-[![Version](https://img.shields.io/cocoapods/v/CD_ObjC.svg?style=flat)](https://cocoapods.org/pods/CD_ObjC)
-[![License](https://img.shields.io/cocoapods/l/CD_ObjC.svg?style=flat)](https://cocoapods.org/pods/CD_ObjC)
-[![Platform](https://img.shields.io/cocoapods/p/CD_ObjC.svg?style=flat)](https://cocoapods.org/pods/CD_ObjC)
+[![CI Status](https://img.shields.io/travis/liucaide/CaamDauObjC.svg?style=flat)](https://travis-ci.org/liucaide/CaamDauObjC)
+[![Version](https://img.shields.io/cocoapods/v/CaamDauObjC.svg?style=flat)](https://cocoapods.org/pods/CaamDauObjC)
+[![License](https://img.shields.io/cocoapods/l/CaamDauObjC.svg?style=flat)](https://cocoapods.org/pods/CaamDauObjC)
+[![Platform](https://img.shields.io/cocoapods/p/CaamDauObjC.svg?style=flat)](https://cocoapods.org/pods/CaamDauObjC)
 # 》目前更多关注于Swift版本，OC版本剩余组件暂不整理更新
 ## 目录
 - [CaauDau核心组件](#CaauDau核心组件)
